@@ -6,6 +6,8 @@ library(ggplot2)
 library(reshape)
 library(dplyr)
 
+##########################################
+# Data example
 # Convert two columns to one with labels
 long <- melt(galton)
 
@@ -31,6 +33,7 @@ g <- g + geom_point(aes(colour=freq, size = freq))
 g <- g + scale_colour_gradient(low = "lightblue", high="white")                    
 g
 
+##########################################
 # Exercises:
 
 # e.1 least square estimate 
@@ -49,6 +52,7 @@ xc <- x - mean(x)
 sum(yc * xc)/sum(xc^2)
 lm(y ~ x)
 
+##########################################
 # Correlation
 
 # e.1 basic stats
@@ -80,6 +84,7 @@ zy <- (y-my)/sdy
 mean(zx); sd(zx)
 mean(zy); sd(zy)
 
+##########################################
 # Ordinary least squares
 
 # Calculate coefficients manually 
@@ -91,6 +96,7 @@ b1 <- cor(y,x) * sd(y)/sd(x)
 b0 <- mean(y) - b1*mean(x)
 rbind(c(b0, b1), coef(lm(y~x)))
 
+##########################################
 # Calculate regression to origin
 yc <- y-mean(y)
 xc <- x-mean(x)
@@ -151,6 +157,7 @@ g = g + xlab("Father's height, normalized")
 g = g + ylab("Son's height, normalized")
 g
 
+##########################################
 # quiz 1
 # q.1
 x <- c(0.18, -1.54, 0.42, 0.95)
