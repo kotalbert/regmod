@@ -201,29 +201,33 @@ mean(x)
 
 # quiz 2
 
-# e.1 
+# q.1 
 x <- c(0.61, 0.93, 0.83, 0.35, 0.54, 0.16, 0.91, 0.62, 0.62)
 y <- c(0.67, 0.84, 0.6, 0.18, 0.85, 0.47, 1.1, 0.65, 0.36)
 summary(lm(y~x))$coefficients
-# e.2 
+
+# q.2 
 summary(lm(y~x))$sigma
-# e.3 
+
+# q.3 
 data(mtcars)
 fit.mpg <- lm(mpg ~ wt, data=mtcars)
 mwt <- mean(mtcars$wt)
 predict(fit.mpg, newdata=list(wt=mwt), interval="confidence")
-# e.4 
+
+# q.4 
 summary(fit.mpg)
-# e.5 
+
+# q.5 
 predict(fit.mpg, newdata=list(wt=3), interval="predict")
 
-# e.6 
+# q.6 
 wtst <- mtcars$wt/2
 fit.mpg2 <- lm(mpg ~ wtst, data=mtcars)
 summary(fit.mpg2)
 confint(fit.mpg2)
 
-# e.9 
+# q.9 
 y <- mtcars$mpg
 yh <- predict(fit.mpg)
 sse <- sum((y-yh)^2)
